@@ -14,7 +14,7 @@ public class App {
 	private final static String BOOTSTRAP_SERVERS = "localhost:9092";
 //private final static String BOOTSTRAP_SERVERS = "localhost:9092,localhost:9093,localhost:9094";
 
-	public static void main(String... args) throws Exception {
+	public static void main(String[] args) throws Exception {
 		runConsumer();
 	}
 
