@@ -2,6 +2,7 @@ package kafka.kafka;
 
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.clients.consumer.Consumer;
+import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.LongDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
@@ -57,7 +58,6 @@ public class App {
 				else
 					continue;
 			}
-
 			consumerRecords.forEach(record -> {
 				System.out.printf("Consumer Record:(%d, %s, %d, %d)\n", record.key(), record.value(),
 						record.partition(), record.offset());
@@ -65,7 +65,7 @@ public class App {
 
 			consumer.commitAsync();
 		}
-
+		
 		consumer.close();
 		System.out.println("DONE");
 	}
